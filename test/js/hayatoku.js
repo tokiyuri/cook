@@ -5,7 +5,7 @@ $(window).load(function(){
 	$(function(){
 		$topBtn.hide();
 		$(window).scroll(function(){
-			if($(window).scrollTop() > 0){
+			if($(window).scrollTop() > 400){
 				$topBtn.slideDown(200);
 			}else {
 				$topBtn.slideUp(200);
