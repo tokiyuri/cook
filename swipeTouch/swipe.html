@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Touch</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("div#touch").bind("touchstart", onTouchStart);
+			$("div#touch").bind("touchmove", onTouchMove);
+			$("div#touch").bind("touchend", onTouchEnd);
+			var direction, position;
+
+			//スワイプ開始時の横方向の座標を格納
+			function onTouchStart() {
+				position = getPosition();
+			}
+
+			//スワイプの方向（left／right）を取得
+			function onTouchMove(event) {
+				direction = (position > getPosition(event)) ? "left" : "right";
+			}
+
+			//スワイプ終了時に方向（left／right）をクラス名に指定
+			function onTouchEnd(event) {
+				$("div#touch").removeAttr("class").addClass(direction);
+			}
+
+			//横方向の座標を取得
+			function getPosition(event) {
+				return event.originalEvent.touches[0].pageX;
+			}
+		});
+	</script>
+	<style type="text/css">
+		div#touch {
+			width: 200px;
+			height: 200px;
+			margin: 0px auto;
+			background-color: #e6e6e6;
+		}
+		div#touch.left {
+			background-color: #ff0000;/* 背景を赤色に */
+		}
+		div#touch.right {
+			background-color: #0000ff;/* 背景を青色に */
+		}
+	</style>
+</head>
+<body>
+
+<div id="touch"></div><!-- スワイプの対象 -->
+
+</body>
+</html>

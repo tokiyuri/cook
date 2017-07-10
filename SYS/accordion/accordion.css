@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------------------------------------------------------
+COMMON
+------------------------------------------------------------------------------------------------------------------- */
+body {
+	margin: 0;
+}
+ol,ul {
+	list-style: none;
+	padding-left: 0;
+}
+a {
+	text-decoration: none;
+	color: #0E6F9F;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+h2,h3,h4,h5 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.cf:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.centering-body {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------
+accordionPanel
+------------------------------------------------------------------------------------------------------------------- */
+
+.accordionPanel {
+	display: none;
+	padding-left: 20px;
+
+}
+.active {
+	display: block;
+}
